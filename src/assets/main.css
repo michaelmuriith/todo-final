@@ -1,0 +1,160 @@
+@import url(./base.css);
+
+.bgimage {
+  position: absolute;
+  top: 0;
+  height: 40vh;
+  width: 100vw;
+  background: var(--background-image);
+  background-size: 100% 100%;
+  z-index: -99;
+}
+
+.todo-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.app-cont {
+  width: 50vw;
+  height: 95vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.create-todo .todo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.create-todo .todo form#new-todo-form {
+  display: flex;
+  width: 100%;
+}
+
+.create-todo .todo input[type="text"] {
+  flex-grow: 100;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+  color: var(--text-color);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 0.2px solid var(--very-dark-grayish-blue);
+}
+
+.checkbox:hover {
+  border: 0.2px solid hsl(192, 100%, 67%);
+}
+
+.checkbox::after {
+  content: "";
+  display: flex;
+  background: url(./svg/ICON-CHECK.SVG),
+    linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s ease-in-out;
+}
+
+input:checked ~ .checkbox::after {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  opacity: 1;
+}
+
+.todo-list .todo-list-cont .list {
+  margin: 0.5rem 0;
+  height: 50vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.todo-list .todo-list-cont .list::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-list .todo-list-cont .todo-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 0.1rem solid var(--very-dark-grayish-blue);
+}
+
+.todo-item label {
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.todo-item .todo-content {
+  flex: 1 1 0%;
+}
+
+.todo-item .todo-content input {
+  color: var(--text-color);
+  font-size: 1.125rem;
+}
+
+.todo-item .actions {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item .actions button {
+  display: block;
+  padding: 0.5rem;
+}
+
+.todo-item .actions button:hover {
+  opacity: 0.75;
+}
+
+.todo-item .actions .edit {
+  margin-right: 0.5rem;
+  background-color: var(--primary);
+}
+
+.todo-item.done .todo-content input {
+  text-decoration: line-through;
+  color: var(--very-dark-grayish-blue);
+}
+
+.todo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: x-small;
+  padding: 0.5rem 1rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
